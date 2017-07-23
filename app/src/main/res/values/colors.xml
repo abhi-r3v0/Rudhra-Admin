@@ -12,6 +12,7 @@
     <color name="cyan">#00838f</color>
     <color name="orange">#ff9800</color>
     <color name="black">#000000</color>
-    <color name="grey">#607d8b</color>
+    <color name="grey">    #102027</color>
+    <!--#607d8b-->
     <color name="black_overlay">#66000000</color>
 </resources>

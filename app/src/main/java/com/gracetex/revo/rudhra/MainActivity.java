@@ -2,11 +2,9 @@ package com.gracetex.revo.rudhra;
 
 import android.app.ActivityManager;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Debug;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,7 +13,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
@@ -36,8 +33,7 @@ public class MainActivity extends AppCompatActivity
      */
     public GoogleApiClient client;
 
-
-    private float readCPUUsage() {
+    public static float readCPUUsage() {
         try {
             RandomAccessFile reader = new RandomAccessFile("/proc/stat", "r");
             String[] toks = reader.readLine().split(" ");
@@ -59,7 +55,6 @@ public class MainActivity extends AppCompatActivity
             return 0.0f;
         }
     }
-
 
     public static float getAppUsedMemorySize() {
 
@@ -107,6 +102,7 @@ public class MainActivity extends AppCompatActivity
         Typeface custom_font7 = Typeface.createFromAsset(getAssets(),  "fonts/SR.otf");
         Typeface custom_font8 = Typeface.createFromAsset(getAssets(),  "fonts/bod.otf");
 
+        //Other Components
         final TextView cpuload = (TextView) findViewById(R.id.textView10);
         cpuload.setTypeface(custom_font1);
         final TextView ramusage = (TextView) findViewById(R.id.textView14);
@@ -125,10 +121,14 @@ public class MainActivity extends AppCompatActivity
         {
             public void run()
             {
-                cpu.setText(" "+readCPUUsage() +" %");
-                ram.setText(" "+currentMem()[1] +" MB / "+currentMem()[0]+" MB");
-                handler.postDelayed(this, 800);
-            }
+                    cpu.setText(" "+readCPUUsage() +" %");
+                    ram.setText(" "+currentMem()[1] +" MB / "+currentMem()[0]+" MB");
+                    handler.postDelayed(this,800);
+
+
+                }
+
+
         };
 
         handler.postDelayed(r, 800);
@@ -200,7 +200,10 @@ public class MainActivity extends AppCompatActivity
             } else if (id == R.id.nav_manage) {
                 startActivity(new Intent(this, RootDetector.class));
 
-            } else {
+            } else if (id == R.id.nav_graph) {
+                startActivity(new Intent(this, GraphView.class));
+
+            }else {
                 if (id == R.id.nav_aboutus) {
                     Intent i = new Intent(this,AboutUs.class);
                     startActivity(i);

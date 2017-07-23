@@ -30,6 +30,9 @@
             android:name=".Unroot"
             android:parentActivityName=".RootDetector" />
         <activity
+            android:name=".GraphView"
+            android:parentActivityName=".GraphView"/>
+        <activity
             android:name=".SettingsScanner"
             android:parentActivityName=".MainActivity" />
         <!--
@@ -50,6 +53,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.gracetex.revo.rudhra.RootDetector" />
         </activity>
+
         <activity
             android:name=".PermissionScanner"
             android:label="Permissions Scanner"
