@@ -114,7 +114,7 @@ public class GraphView extends AppCompatActivity{
                         data.addDataSet(set);
                     }
 
-                    data.addEntry(new Entry(set.getEntryCount(), MainActivity.readCPUUsage()*100), 0);
+                    data.addEntry(new Entry(set.getEntryCount(), restrictPercentage(MainActivity.readCPUUsage()*100)), 0);
                     data.notifyDataChanged();
 
                     // let the chart know it's data has changed
@@ -163,9 +163,12 @@ public class GraphView extends AppCompatActivity{
 
         LineDataSet set = new LineDataSet(null, "Dynamic Data");
         set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        set.setColor(Color.parseColor("#c25e00"));
         set.setDrawValues(false);
-        set.setFillColor(Color.parseColor("#ff9800"));
+        set.setDrawCircles(false);
+        set.setFillColor(Color.parseColor("#ffbd45"));
         set.setDrawFilled(true);
+        set.setFillAlpha(255);
         return set;
     }
 
@@ -195,5 +198,13 @@ public class GraphView extends AppCompatActivity{
         int [] mem = {totalMegs, usedMegs};
         double percentAvail = mi.availMem / (double) mi.totalMem;
         return mem;
+    }
+
+    private float restrictPercentage(float percentage) {
+        if (percentage > 100)
+            return 100;
+        else if (percentage < 0)
+            return 0;
+        else return percentage;
     }
 }
