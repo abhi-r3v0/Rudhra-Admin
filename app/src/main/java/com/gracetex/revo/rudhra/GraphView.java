@@ -57,7 +57,7 @@ public class GraphView extends AppCompatActivity{
         // add empty data
         rChart.setData(data2);
         rChart.getLegend().setEnabled(false);
-        rChart.getDescription().setText("Ram Usage");
+        rChart.getDescription().setText("RAM Usage Graph");
         rChart.getDescription().setTextColor(Color.WHITE);
         rChart.animateXY(1000, 1000); // animate horizontal and vertical 3000 milliseconds
 
