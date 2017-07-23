@@ -203,10 +203,7 @@ public class MainActivity extends AppCompatActivity
             if (id == R.id.nav_settings)
                 startActivity(new Intent(this, SettingsScanner.class));
 
-            else if (id == R.id.nav_slideshow) {
-                startActivity(new Intent(this, PermissionScanner.class));
-
-            } else if (id == R.id.nav_manage) {
+             else if (id == R.id.nav_manage) {
                 startActivity(new Intent(this, RootDetector.class));
 
             } else if (id == R.id.nav_graph) {

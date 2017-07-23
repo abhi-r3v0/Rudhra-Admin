@@ -3,21 +3,30 @@
 
     <item
         is-multidex="true"
-        jar="/Users/PSNAppZ/StudioProjects/Rudhra-Admin/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/home/r3v0/AndroidStudioProjects/Rudhra-Admin/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/PSNAppZ/StudioProjects/Rudhra-Admin/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_95aea1e900f1375e88a302a3ebe8e30736561df7/classes.dex" />
+        <dex dex="/home/r3v0/AndroidStudioProjects/Rudhra-Admin/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_6c6ba07ef9d78e772777a83e8b82ad2ddde27746/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/r3v0/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v3.0.2/5d4eb08a326bdbd7fbbddc769666898c9936b282/MPAndroidChart-v3.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5d4eb08a326bdbd7fbbddc769666898c9936b282">
+        <dex dex="/home/r3v0/AndroidStudioProjects/Rudhra-Admin/app/build/intermediates/pre-dexed/release/MPAndroidChart-v3.0.2_fbbd2f9525b0b5b14518e03c4b6f760a328081d7.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/PSNAppZ/StudioProjects/Rudhra-Admin/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/home/r3v0/AndroidStudioProjects/Rudhra-Admin/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="95d5bfed88ac3a69bb165d893224b56eed3f3f85">
-        <dex dex="/Users/PSNAppZ/StudioProjects/Rudhra-Admin/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_4d4f2aa2d179913622fdff186a1918ff094b70df/classes.dex" />
+        sha1="ee26325b902e326278b75a74c876eaa8bb206e11">
+        <dex dex="/home/r3v0/AndroidStudioProjects/Rudhra-Admin/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_c4d0647197581377ba9b5b9e384a49be93292f98/classes.dex" />
     </item>
 
 </items>

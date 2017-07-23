@@ -97,7 +97,7 @@
         android:id="@+id/ADBt"
         android:layout_below="@+id/textView7"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="36dp" />
+        android:layout_marginTop="50dp" />
 
     <ToggleButton
         android:text="ToggleButton"
@@ -108,7 +108,7 @@
         android:textColor="@color/orange"
         android:clickable="true"
         android:id="@+id/DevB"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="59dp"
         android:layout_below="@+id/textView8"
         android:layout_alignParentEnd="true" />
 
@@ -130,7 +130,7 @@
         android:textSize="10dp"
         android:textColor="@color/orange"
         android:clickable="true"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="44dp"
         android:layout_below="@+id/tvvs"
         android:layout_alignParentEnd="true" />
 
