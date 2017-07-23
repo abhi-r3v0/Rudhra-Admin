@@ -48,13 +48,22 @@ public class MainActivity extends AppCompatActivity
             reader.close();
             toks = load.split(" ");
             long cpu2 = ((((Long.parseLong(toks[2]) + Long.parseLong(toks[3])) + Long.parseLong(toks[4])) + Long.parseLong(toks[6])) + Long.parseLong(toks[7])) + Long.parseLong(toks[8]);
-            DecimalFormat decimalFormat = new DecimalFormat("#.00");
+            DecimalFormat decimalFormat = new DecimalFormat("#.0");
             return Float.parseFloat(decimalFormat.format(((float) (cpu2 - cpu1)) / ((float) ((cpu2 + Long.parseLong(toks[5])) - (cpu1 + idle1)))));
         } catch (IOException ex) {
             ex.printStackTrace();
             return 0.0f;
         }
     }
+
+    private float restrictPercentage(float percentage) {
+        if (percentage > 100)
+            return 100;
+        else if (percentage < 0)
+            return 0;
+        else return percentage;
+    }
+
 
     public static float getAppUsedMemorySize() {
 
@@ -121,7 +130,7 @@ public class MainActivity extends AppCompatActivity
         {
             public void run()
             {
-                    cpu.setText(" "+readCPUUsage() +" %");
+                    cpu.setText(" "+restrictPercentage(readCPUUsage()*100) +" %");
                     ram.setText(" "+currentMem()[1] +" MB / "+currentMem()[0]+" MB");
                     handler.postDelayed(this,800);
 
