@@ -9,15 +9,15 @@
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_action_settings"
-            android:title="Vulnerable settings" />
+            android:title="Vulnerable Settings" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_action_permissions"
-            android:title="Sensitive data access" />
+            android:title="Sensitive Data Access" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_action_root"
-            android:title="Root access" />
+            android:title="Root Access" />
         <item
             android:id="@+id/nav_graph"
             android:icon="@drawable/ic_chart"
@@ -25,12 +25,12 @@
 
     </group>
 
-    <item android:title="Contact us">
+    <item android:title="Contact Us">
         <menu>
             <item
                 android:id="@+id/nav_aboutus"
                 android:icon="@drawable/ic_menu_send"
-                android:title="About us" />
+                android:title="About Us" />
         </menu>
     </item>
 

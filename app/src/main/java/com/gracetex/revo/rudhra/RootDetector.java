@@ -32,12 +32,36 @@ public class RootDetector extends AppCompatActivity {
         tvroot2.setTypeface(custom_font7);
 
         ToggleButton rootb = (ToggleButton) (findViewById(R.id.Roottb));
+        ToggleButton hooktb = (ToggleButton) (findViewById(R.id.hooktb));
+
         Button rtools = (Button) (findViewById(R.id.broottools));
         Button unroot = (Button)(findViewById(R.id.bunroot));
         TextView roottv = (TextView) (findViewById(R.id.roottv));
 
+        TextView hooktv = (TextView) (findViewById(R.id.Syshook));
+        hooktv.setTypeface(custom_font2);
+        TextView syshooktv = (TextView) (findViewById(R.id.tvSyshook));
+        syshooktv.setTypeface(custom_font7);
+
+
         String yesdesc = "Your device has root access. Rooted devices allow lot of customizations but as well pose serious security issues by allowing apps to access lot of resources from the phone. You can choose to unroot the device or install security-enhancing tools. Here is a list : ";
         String nodesc = "No root access detected. Your device is a little more safer!";
+
+        String hookyes = "Your device has been hooked. This means that user applications could act as privileged applications and gain access to system resources and settings.";
+        String hookno = "No system hook found. Your device is fully under your control.";
+
+        boolean isHooked = FindHook();
+
+        if (isHooked == true){
+
+            hooktb.setChecked(true);
+            syshooktv.setText(hookyes);
+        }
+
+        else{
+            hooktb.setChecked(false);
+            syshooktv.setText(hookno);
+        }
 
         boolean isRooted = FindRoot();
 
@@ -154,5 +178,26 @@ public class RootDetector extends AppCompatActivity {
         return false;
     }
 
+
+
+    /*
+    Finding system hooks.
+    Two processes used.
+     */
+
+    public boolean FindHook() {return HookJarFinder();}
+
+
+    public boolean HookJarFinder(){
+        String hook = "/data/data/de.robv.android.xposed.installer/bin/XposedBridge.jar";
+        if (new File(hook).exists()){
+            Toast.makeText(this, "Xposed Bridge found. System has been hooked!", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        else {
+            Toast.makeText(this, "Xposed Bridge not found. System not hooked.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
 }
 

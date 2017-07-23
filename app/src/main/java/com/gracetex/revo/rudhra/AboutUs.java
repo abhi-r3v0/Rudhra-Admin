@@ -20,8 +20,11 @@ public class AboutUs extends Activity {
         setContentView(R.layout.activity_about_us);
 
         final TextView us = (TextView) findViewById(R.id.tvus);
+        final TextView ek = (TextView) findViewById(R.id.tvekathva);
         Typeface custom_font3 = Typeface.createFromAsset(getAssets(),  "fonts/OdinBold.otf");
+        Typeface custom_font6 = Typeface.createFromAsset(getAssets(),  "fonts/MagmaWave_Caps.otf");
         us.setTypeface(custom_font3);
+        ek.setTypeface(custom_font3);
 
         Button git = (Button)(findViewById(R.id.prjctbtn));
         git.setOnClickListener(new View.OnClickListener() {
@@ -35,4 +38,5 @@ public class AboutUs extends Activity {
         });
 
     }
+
 }

@@ -14,21 +14,21 @@
         android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Roottb"
-        android:layout_centerHorizontal="true"
         android:textColor="@color/white"
         android:maxLines="100"
-        android:layout_marginTop="58dp"
-        android:id="@+id/roottv" />
+        android:layout_marginTop="32dp"
+        android:id="@+id/roottv"
+        android:layout_below="@+id/Roottb"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:text="Root Access"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:textSize="45dp"
+        android:textSize="25dp"
         android:id="@+id/textView3"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="50dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -36,13 +36,13 @@
         android:text="ToggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="22dp"
         android:clickable="false"
         android:id="@+id/Roottb"
         android:textColor="@color/orange"
+        style="@style/AppTheme"
         android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true"
-        style="@style/AppTheme" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="Tools"
@@ -66,6 +66,38 @@
         android:layout_alignEnd="@+id/broottools"
         android:layout_marginBottom="11dp"
         android:id="@+id/bunroot" />
+
+    <TextView
+        android:id="@+id/Syshook"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="System Hook"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/roottv"
+        android:layout_alignStart="@+id/textView3" />
+
+    <ToggleButton
+        android:id="@+id/hooktb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        android:clickable="false"
+        android:textColor="@color/orange"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/Syshook"
+        android:layout_alignStart="@+id/bunroot" />
+
+    <TextView
+        android:id="@+id/tvSyshook"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hooktb"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="" />
 
 
 </RelativeLayout>
