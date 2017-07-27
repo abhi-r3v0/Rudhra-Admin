@@ -48,7 +48,7 @@
         <item name="android:background">@color/black_overlay</item>
     </style>
 
-    <style name="WelcomeTheme" parent="AppTheme" >
+    <style name="WelcomeTheme" parent="AppTheme">
         <item name="android:colorBackground">@color/orange</item>
         <item name="android:windowBackground">@color/orange</item>
         <item name="android:windowFullscreen">true</item>

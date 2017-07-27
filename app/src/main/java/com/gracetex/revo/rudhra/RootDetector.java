@@ -119,8 +119,9 @@ public class RootDetector extends AppCompatActivity {
     //Check within the paths for the existance of su binary
     public boolean SUBinFinder() {
         String[] paths = {"/system/app/Superuser.apk",
+                "/system/etc/init/superuser.rc",
+                "/system/addon.d/51-addonsu.sh",
                 "/system/priv-app/Superuser.apk",
-                "/system/priv-app/superuser.apk",
                 "/system/app/superuser.apk",
                 "/sbin/su",
                 "/system/bin/su",

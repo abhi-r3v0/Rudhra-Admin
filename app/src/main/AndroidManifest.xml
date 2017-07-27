@@ -30,7 +30,7 @@
             android:parentActivityName=".RootDetector" />
         <activity
             android:name=".GraphView"
-            android:parentActivityName=".GraphView"/>
+            android:parentActivityName=".GraphView" />
         <activity
             android:name=".SettingsScanner"
             android:parentActivityName=".MainActivity" />
@@ -52,12 +52,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.gracetex.revo.rudhra.RootDetector" />
         </activity>
-
         <activity
             android:name=".PermissionScanner"
             android:label="Permissions Scanner"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoadingScreen"
+            android:label="@string/title_activity_loading_screen"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

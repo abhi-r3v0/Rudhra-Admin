@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:maxLines="100"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="21dp"
         android:id="@+id/roottv"
         android:layout_below="@+id/Roottb"
         android:layout_centerHorizontal="true" />
@@ -28,9 +28,9 @@
         android:textColor="@color/white"
         android:textSize="25dp"
         android:id="@+id/textView3"
-        android:layout_marginTop="50dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp" />
 
     <ToggleButton
         android:text="ToggleButton"
@@ -74,9 +74,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="System Hook"
-        android:layout_marginTop="40dp"
         android:layout_below="@+id/roottv"
-        android:layout_alignStart="@+id/textView3" />
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginTop="18dp" />
 
     <ToggleButton
         android:id="@+id/hooktb"

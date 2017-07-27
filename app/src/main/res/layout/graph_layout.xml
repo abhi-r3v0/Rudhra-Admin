@@ -23,7 +23,7 @@
         android:paddingTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ram Usage"
+        android:text="RAM Usage Graph"
         android:textAlignment="center"/>
 
     <com.github.mikephil.charting.charts.LineChart

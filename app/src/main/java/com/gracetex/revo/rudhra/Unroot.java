@@ -16,7 +16,7 @@ public class Unroot extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unroot);
 
-        Typeface custom_font2 = Typeface.createFromAsset(getAssets(),  "fonts/OstrichSans-Bold.otf");
+        Typeface custom_font2 = Typeface.createFromAsset(getAssets(),  "fonts/OdinBold.otf");
         Typeface custom_font7 = Typeface.createFromAsset(getAssets(),  "fonts/SR.otf");
 
         final TextView unroot1 = (TextView) findViewById(R.id.textView20);

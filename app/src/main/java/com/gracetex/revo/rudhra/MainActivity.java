@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(this, RootDetector.class));
 
             } else if (id == R.id.nav_graph) {
-                startActivity(new Intent(this, GraphView.class));
+                startActivity(new Intent(this, LoadingScreen.class));
 
             }else {
                 if (id == R.id.nav_aboutus) {
