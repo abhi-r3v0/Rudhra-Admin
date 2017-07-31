@@ -87,5 +87,24 @@
             android:layout_alignBottom="@+id/imageView3"
             android:layout_alignStart="@+id/cputv" />
 
+        <TextView
+            android:id="@+id/tvCPUh"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_above="@+id/imageView3"
+            android:layout_alignStart="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Health :"
+            android:layout_above="@+id/imageView3"
+            android:layout_alignEnd="@+id/imageView3"
+            android:layout_marginEnd="27dp" />
+
 
 </RelativeLayout>

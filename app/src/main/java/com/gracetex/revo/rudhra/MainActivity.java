@@ -2,6 +2,7 @@ package com.gracetex.revo.rudhra;
 
 import android.app.ActivityManager;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     public GoogleApiClient client;
+    String health = null;
 
     public static float readCPUUsage() {
         try {
@@ -114,14 +116,48 @@ public class MainActivity extends AppCompatActivity
         //Other Components
         final TextView cpuload = (TextView) findViewById(R.id.textView10);
         cpuload.setTypeface(custom_font1);
+
+        final TextView healther = (TextView) findViewById(R.id.textView9);
+        healther.setTypeface(custom_font2);
+
+        final TextView tvcpuh = (TextView) findViewById(R.id.tvCPUh);
+        tvcpuh.setTypeface(custom_font2);
+
+
+        float percent = restrictPercentage(readCPUUsage() * 100);
+        if (percent <= 20){
+            health = "Optimized";
+            tvcpuh.setText(health);
+            tvcpuh.setTextColor(Color.GREEN);
+        }
+
+        else if (percent > 20 && percent <=50 ){
+            health = "Good";
+            tvcpuh.setTextColor(Color.YELLOW);
+            tvcpuh.setText(health);
+        }
+        else if (percent > 50 && percent <=80 ){
+            health = "Poor";
+            tvcpuh.setTextColor(Color.WHITE);
+            tvcpuh.setText(health);
+        }
+        else if (percent > 80 && percent <=100 ){
+            health = "Critical";
+            tvcpuh.setTextColor(Color.RED);
+            tvcpuh.setText(health);
+        }
+
+
         final TextView ramusage = (TextView) findViewById(R.id.textView14);
         ramusage.setTypeface(custom_font1);
         final TextView cpu = (TextView)(findViewById(R.id.cputv));
         cpu.setTypeface(custom_font2);
+
         final TextView ram = (TextView)(findViewById(R.id.ramtv));
         ram.setTypeface(custom_font2);
         final TextView tvw = (TextView) findViewById(R.id.tvwel);
         tvw.setTypeface(custom_font3);
+
 
 
         final android.os.Handler handler = new android.os.Handler();
@@ -130,6 +166,29 @@ public class MainActivity extends AppCompatActivity
         {
             public void run()
             {
+
+                float percent = restrictPercentage(readCPUUsage() * 100);
+                if (percent <= 20){
+                    health = "Optimized";
+                    tvcpuh.setText(health);
+                    tvcpuh.setTextColor(Color.GREEN);
+                }
+
+                else if (percent > 20 && percent <=50 ){
+                    health = "Good";
+                    tvcpuh.setTextColor(Color.YELLOW);
+                    tvcpuh.setText(health);
+                }
+                else if (percent > 50 && percent <=80 ){
+                    health = "Poor";
+                    tvcpuh.setTextColor(Color.BLUE);
+                    tvcpuh.setText(health);
+                }
+                else if (percent > 80 && percent <=100 ){
+                    health = "Critical";
+                    tvcpuh.setTextColor(Color.RED);
+                    tvcpuh.setText(health);
+                }
                     cpu.setText(" "+restrictPercentage(readCPUUsage()*100) +" %");
                     ram.setText(" "+currentMem()[1] +" MB / "+currentMem()[0]+" MB");
                     handler.postDelayed(this,800);
