@@ -20,6 +20,7 @@ public class AboutUs extends Activity {
         setContentView(R.layout.activity_about_us);
 
         final TextView us = (TextView) findViewById(R.id.tvus);
+        final TextView ver = (TextView) findViewById(R.id.ver);
         final TextView ek = (TextView) findViewById(R.id.tvekathva);
         Typeface custom_font3 = Typeface.createFromAsset(getAssets(),  "fonts/OdinBold.otf");
         Typeface custom_font6 = Typeface.createFromAsset(getAssets(),  "fonts/MagmaWave_Caps.otf");

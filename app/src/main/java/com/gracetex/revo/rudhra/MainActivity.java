@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
@@ -124,29 +125,14 @@ public class MainActivity extends AppCompatActivity
         tvcpuh.setTypeface(custom_font2);
 
 
-        float percent = restrictPercentage(readCPUUsage() * 100);
-        if (percent <= 20){
-            health = "Optimized";
-            tvcpuh.setText(health);
-            tvcpuh.setTextColor(Color.GREEN);
-        }
+       /* //Notifications
+        NotificationCompat.Builder cpunot = new NotificationCompat.Builder(this);
+        cpunot.setSmallIcon(R.mipmap.ic_launcher);
+        cpunot.setContentTitle("Your CPU is not in good condition");
 
-        else if (percent > 20 && percent <=50 ){
-            health = "Good";
-            tvcpuh.setTextColor(Color.YELLOW);
-            tvcpuh.setText(health);
-        }
-        else if (percent > 50 && percent <=80 ){
-            health = "Poor";
-            tvcpuh.setTextColor(Color.WHITE);
-            tvcpuh.setText(health);
-        }
-        else if (percent > 80 && percent <=100 ){
-            health = "Critical";
-            tvcpuh.setTextColor(Color.RED);
-            tvcpuh.setText(health);
-        }
-
+        NotificationManager notif = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        synchronized (this)
+        {notif.notify();}*/
 
         final TextView ramusage = (TextView) findViewById(R.id.textView14);
         ramusage.setTypeface(custom_font1);
@@ -158,6 +144,9 @@ public class MainActivity extends AppCompatActivity
         final TextView tvw = (TextView) findViewById(R.id.tvwel);
         tvw.setTypeface(custom_font3);
 
+
+        final ImageView cpuimg = (ImageView) findViewById(R.id.imageView2);
+        final ImageView ramimg = (ImageView) findViewById(R.id.imageView3);
 
 
         final android.os.Handler handler = new android.os.Handler();
@@ -181,7 +170,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 else if (percent > 50 && percent <=80 ){
                     health = "Poor";
-                    tvcpuh.setTextColor(Color.BLUE);
+                    tvcpuh.setTextColor(Color.WHITE);
                     tvcpuh.setText(health);
                 }
                 else if (percent > 80 && percent <=100 ){
@@ -192,7 +181,6 @@ public class MainActivity extends AppCompatActivity
                     cpu.setText(" "+restrictPercentage(readCPUUsage()*100) +" %");
                     ram.setText(" "+currentMem()[1] +" MB / "+currentMem()[0]+" MB");
                     handler.postDelayed(this,800);
-
 
                 }
 
@@ -213,6 +201,9 @@ public class MainActivity extends AppCompatActivity
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
+
+
+
 
     @Override
     public void onBackPressed() {
@@ -266,7 +257,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(this, RootDetector.class));
 
             } else if (id == R.id.nav_graph) {
-                startActivity(new Intent(this, LoadingScreen.class));
+                startActivity(new Intent(this, GraphView.class));
 
             }else {
                 if (id == R.id.nav_aboutus) {

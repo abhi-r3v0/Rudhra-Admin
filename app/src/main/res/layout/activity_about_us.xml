@@ -25,8 +25,8 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:id="@+id/tvus"
-        android:layout_marginBottom="39dp"
-        android:layout_above="@+id/textView4"
+        android:layout_marginTop="85dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -35,13 +35,13 @@
         android:textSize="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:text="\u00a9 EKATHVA"
+        android:layout_marginBottom="59dp"
+        android:text="\u00a9 NEON SECURITY"
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/prjctbtn" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/ver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Version 1.1"
