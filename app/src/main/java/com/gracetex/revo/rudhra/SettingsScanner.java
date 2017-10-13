@@ -93,7 +93,7 @@ public class SettingsScanner extends AppCompatActivity {
             });
         }
 
-        
+
 
         ToggleButton ADBes = (ToggleButton) (findViewById(R.id.ADBt));
         if (Settings.Secure.getInt(getContentResolver(), Settings.Global.ADB_ENABLED, 0) == 1) {
