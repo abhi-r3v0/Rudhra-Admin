@@ -6,7 +6,9 @@
     <string name="Revo">Abhishek J M</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_tools">Settings</string>
-
+    <string name="notification_title">Rudhra</string>
+    <string name="notification_text">Your system health is running low!</string>
+    <string name="vuln_set_notofication_text">You have vulerable configuration in your device.</string>
 
     <string-array name="welscreen">
         <item>CPU</item>
@@ -87,4 +89,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_loading_screen">LoadingScreen</string>
+    <string name="title_activity_notification">NotificationActivity</string>
 </resources>

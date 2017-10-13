@@ -1,7 +1,11 @@
 package com.gracetex.revo.rudhra;
 
 import android.app.ActivityManager;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -11,6 +15,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -172,11 +177,13 @@ public class MainActivity extends AppCompatActivity
                     health = "Poor";
                     tvcpuh.setTextColor(Color.WHITE);
                     tvcpuh.setText(health);
+                    healthNotification();
                 }
                 else if (percent > 80 && percent <=100 ){
                     health = "Critical";
                     tvcpuh.setTextColor(Color.RED);
                     tvcpuh.setText(health);
+                    healthNotification();
                 }
                     cpu.setText(" "+restrictPercentage(readCPUUsage()*100) +" %");
                     ram.setText(" "+currentMem()[1] +" MB / "+currentMem()[0]+" MB");
@@ -203,6 +210,22 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    public void healthNotification() {
+        PendingIntent pi = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0);
+        Resources r = getResources();
+        Notification notification = new NotificationCompat.Builder(this)
+                .setTicker(r.getString(R.string.notification_title))
+                .setSmallIcon(R.drawable.ic_launcher)
+                .setContentTitle(r.getString(R.string.notification_title))
+                .setContentText(r.getString(R.string.notification_text))
+                .setContentIntent(pi)
+                .setAutoCancel(true)
+                .setOnlyAlertOnce(true)
+                .build();
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(0, notification);
+    }
 
 
     @Override
@@ -291,6 +314,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onStart() {
         super.onStart();
+
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.

@@ -60,7 +60,7 @@
         <activity
             android:name=".LoadingScreen"
             android:label="@string/title_activity_loading_screen"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

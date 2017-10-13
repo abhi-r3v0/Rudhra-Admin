@@ -1,11 +1,16 @@
 package com.gracetex.revo.rudhra;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -71,6 +76,7 @@ public class SettingsScanner extends AppCompatActivity {
         ToggleButton USs = (ToggleButton) (findViewById(R.id.USt));
         if (Settings.Secure.getInt(getContentResolver(), Settings.Secure.INSTALL_NON_MARKET_APPS, 0) == 1) {
             USs.setChecked(true);
+            settingsNotification();
             USs.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -87,14 +93,12 @@ public class SettingsScanner extends AppCompatActivity {
             });
         }
 
-
-
-
-
+        
 
         ToggleButton ADBes = (ToggleButton) (findViewById(R.id.ADBt));
         if (Settings.Secure.getInt(getContentResolver(), Settings.Global.ADB_ENABLED, 0) == 1) {
             ADBes.setChecked(true);
+            settingsNotification();
             ADBes.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -114,11 +118,10 @@ public class SettingsScanner extends AppCompatActivity {
 
 
 
-
-
         ToggleButton DevS = (ToggleButton) (findViewById(R.id.DevB));
         if (Settings.Secure.getInt(getContentResolver(), Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) == 1) {
             DevS.setChecked(true);
+            settingsNotification();
             DevS.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -134,6 +137,22 @@ public class SettingsScanner extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    public void settingsNotification(){
+        PendingIntent pi = PendingIntent.getActivity(this, 0, new Intent(this, SettingsScanner.class), 0);
+        Resources r = getResources();
+        Notification vulnSetNot = new NotificationCompat.Builder(this)
+                .setTicker("Rudhra")
+                .setSmallIcon(R.drawable.ic_launcher)
+                .setContentText(r.getString(R.string.vuln_set_notofication_text))
+                .setContentIntent(pi)
+                .setAutoCancel(true)
+                .setOnlyAlertOnce(true)
+                .build();
+
+        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        nm.notify(0, vulnSetNot);
     }
 
     /**
